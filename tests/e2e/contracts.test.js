@@ -3,9 +3,7 @@ const app = require("../../src/app");
 const { seed } = require('../../seed/index');
 
 beforeAll(async () => {
-  console.log(seed, 'seed')
   await seed()
-  console.log('----------------- FINISHED -----------------------------')
 });
 
 describe("GET /contracts", function () {
