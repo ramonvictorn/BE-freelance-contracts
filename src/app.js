@@ -5,7 +5,7 @@ const {getProfile} = require('./middleware/getProfile')
 const { getContractById, getContracts } = require('./controllers/contracts');
 const { getUnpaidJobs, payAJob } = require('./controllers/jobs');
 const { deposityMoney } = require('./controllers/balances');
-const { getProfessionWithMoreEarns } = require('./controllers/admin');
+const { getProfessionWithMoreEarns, getClientsWithMostPaidJobs } = require('./controllers/admin');
 
 const app = express();
 app.use(bodyParser.json());
@@ -22,6 +22,7 @@ app.post('/jobs/:jobId/pay', getProfile , payAJob);
 app.post('/balances/deposit/:userId', getProfile , deposityMoney);
 
 app.get('/admin/best-profession', getProfile , getProfessionWithMoreEarns);
+app.get('/admin/best-clients', getProfile , getClientsWithMostPaidJobs);
 
 
 module.exports = app;
