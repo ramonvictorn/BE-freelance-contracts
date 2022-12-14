@@ -1,6 +1,8 @@
 # DEEL BACKEND TASK
 
   
+## Tests
+- to run `npm run test`
 
 💫 Welcome! 🎉
 
